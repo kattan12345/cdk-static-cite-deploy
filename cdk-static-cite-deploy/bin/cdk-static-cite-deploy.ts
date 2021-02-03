@@ -9,4 +9,7 @@ const deployEnv = process.env.DEPLOY_ENV || 'staging';
 const suffix = deployEnv !== 'production' ? '-' + deployEnv : '';
 
 const app = new cdk.App();
+
+// CdkStaticCiteDeployStackクラスは使い回す
+
 new CdkStaticCiteDeployStack(app, `CdkStaticCiteDeployStack${suffix}`, { env: { account: awsAccountID, region: awsRegion}});
